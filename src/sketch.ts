@@ -1,19 +1,14 @@
+let fishArr: Fish[];
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    fishArr = collect(windowWidth, windowHeight, 10);
     noLoop();
 }
 
 function draw() {
     background("white");
-    drawRings(mouseX, mouseY);
-    drawRings(100, 300);
-}
-
-function drawRings(x: number, y: number): void {
-    noFill();
-    for (let i = 0; i < 10; i++) {
-        circle(x, y, random(10, 300));
-    }
+    drawFishes(fishArr);
 }
 
 function mousePressed() {

@@ -42,23 +42,31 @@ function drawOneFishTail(oneFish: Fish): void {
 }
 
 function drawOneFishEye(oneFish: Fish): void {
-    const radius: number = oneFish.diameter / 2; 
-    const offset: number = 1/2 * radius;
-    const eyeSize: number = 1/5 * radius;
-    const pupilSize: number = 1/3 * eyeSize
+  const radius: number = oneFish.diameter / 2;
+  const offset: number = (1 / 2) * radius;
+  const eyeSize: number = (1 / 5) * radius;
+  const pupilSize: number = (1 / 2) * eyeSize;
 
-    const direction: number = oneFish.speed > 0 ? 1 : -1;
+  const direction: number = oneFish.speed > 0 ? 1 : -1;
 
-    fill("white");
-    circle(oneFish.position.x + offset * direction, oneFish.position.y - offset, eyeSize);
-    fill("black");
-    circle(oneFish.position.x + offset * direction, oneFish.position.y - offset, pupilSize);
+  fill("white");
+  circle(
+    oneFish.position.x + offset * direction,
+    oneFish.position.y - offset,
+    eyeSize
+  );
+  fill("black");
+  circle(
+    oneFish.position.x + offset * direction,
+    oneFish.position.y - offset,
+    pupilSize
+  );
 }
 
 function generateOneFish(windowWidth: number, windowHeight: number): Fish {
-    const diameter = random(30, 100);
-  
-    const retFish: Fish = {
+  const diameter = random(30, 100);
+
+  const retFish: Fish = {
     position: {
       x: random(windowWidth),
       y: random(windowHeight),
@@ -66,7 +74,7 @@ function generateOneFish(windowWidth: number, windowHeight: number): Fish {
     speed: random(1, 3) * random([1, -1]),
     diameter,
     tailSize: random(diameter / 2),
-    color: random(fishPalette)
+    color: random(fishPalette),
   };
   return retFish;
 }

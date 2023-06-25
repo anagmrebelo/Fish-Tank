@@ -17,14 +17,14 @@ function drawOneBubble(oneBubble: Bubble): void {
 }
 
 function generateOneBubble(windowWidth: number, windowHeight: number): Bubble {
-    const retBubble: Bubble = {
+  const retBubble: Bubble = {
     position: {
       x: random(windowWidth),
       y: random(windowHeight),
     },
-    speed: random(1, 3) * random([1, -1]),
-    diameter: random(30, 100),
-    color: random(fishPalette)
+    speed: random(1, 3),
+    diameter: random(20, 30),
+    color: "rgba(255,255,255, 0.25)",
   };
   return retBubble;
 }
@@ -36,8 +36,8 @@ function moveBubbles(bubbleArr: Bubble[], windowHeigh: number): void {
 }
 
 function moveBubble(oneBubble: Bubble, windowHeigh: number): void {
-  oneBubble.position.x += oneBubble.speed;
-  if (oneBubble.position.y > windowWidth) {
-    oneBubble.position.y= -5;
+  oneBubble.position.y -= oneBubble.speed;
+  if (oneBubble.position.y < 0) {
+    oneBubble.position.y = windowHeigh + 5;
   }
 }

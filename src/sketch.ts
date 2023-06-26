@@ -2,11 +2,11 @@ let fishArr: Fish[];
 let bubbleArr: Bubble[];
 let algaArr: Alga[];
 
-let mySound: any;
+let mySound: p5.SoundFile;
 
-// function preload() {
-//   mySound = loadSound("sounds/bubble.mp3");
-// }
+function preload() {
+  mySound = loadSound("sounds/bubble.mp3");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);

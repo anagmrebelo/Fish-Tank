@@ -27,14 +27,14 @@ function changeFishDirection(oneFish: Fish, index: number): void {
 
 function popBubble(oneBubble: Bubble, index: number): void {
   bubbleArr.splice(index, 1);
-  // mySound.setVolume(0.5);
-  // mySound.play();
+  mySound.setVolume(0.5);
+  mySound.play();
 }
 
 // Search Functions
 function collidesFish(mouseX: number, mouseY: number, oneFish: Fish) {
   const distanceToMouse = distance({ x: mouseX, y: mouseY }, oneFish.position);
-    const margin = 10;
+  const margin = 10;
   if (distanceToMouse <= oneFish.diameter / 2 + margin) return true;
   return false;
 }
